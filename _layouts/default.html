@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div id="main_content_wrap" class="outer">
+      <div id="main_content" class="inner">
+        <aside class="left">
+        <h5>Navigation</h5>
+          <nav>
+            <ul>
+              <li>
+                <a class="page-link" href="/{{ site.baseurl }}">Home</a>
+              </li>
+              {% for node in site.html_pages %}
+              {% unless node.hide %}
+              <li>
+                <a class="page-link" href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+              </li>
+              {% endunless %}
+              {% endfor %}
+            </ul>
+          </nav>
+          <h5>Projects</h5>
+          <nav>
+            <ul>
+              {%for node in site.projects %}
+              <li>
+                {% if node.global %}
+                <a class="project-link" href="{{ node.url }}">{{ node.title}}</a>
+                {% else %}
+                <a class="project-link" href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </aside>
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
