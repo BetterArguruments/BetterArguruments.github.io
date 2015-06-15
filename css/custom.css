@@ -1,11 +1,38 @@
-@media all and (min-width: 900px) {
+@media all and (min-width: 640px) {
 #navigation {
   position: absolute;
   width: 100px;
   left: -150px;
   text-align: right;
 }
+}
 #navigation ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media all and (min-width: 640px) and (max-width: 1000px) {
+#main_content {
+  margin-left: 150px;
+}
+}
+
+@media all and (max-width: 639px) {
+#navigation {
+  position: absolute;
+  clear: both;
+  top: 0;
+  padding: 1em 0;
+}
+#navigation > h5 {
+  display: none;
+}
+#navigation > ul {
+  float: left;
+}
+#navigation > ul > li {
+  float: left;
+  margin-right: 20px;
 }
 }
