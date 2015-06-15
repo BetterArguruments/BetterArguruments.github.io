@@ -1,0 +1,11 @@
+@media all and (min-width: 900px) {
+#navigation {
+  position: absolute;
+  width: 100px;
+  left: -150px;
+  text-align: right;
+}
+#navigation ul {
+  list-style: none;
+}
+}
